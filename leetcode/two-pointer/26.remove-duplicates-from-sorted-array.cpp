@@ -15,7 +15,6 @@ public:
                 nums[index] = nums[i+1];
             }
         }
-
         return index+1;
     }
 };
