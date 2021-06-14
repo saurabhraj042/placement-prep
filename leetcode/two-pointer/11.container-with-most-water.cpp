@@ -1,5 +1,4 @@
 // saurabhraj042
-// @lc code=start
 class Solution {
 public:
     int maxArea(vector<int>& A) {
