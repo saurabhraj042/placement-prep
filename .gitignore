@@ -18,6 +18,7 @@
 
 # Precompiled Headers *.gch
 *.pch
+*.txt
 
 # Linker files
 *.ilk
