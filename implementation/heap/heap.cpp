@@ -45,7 +45,7 @@ public:
     }
 
     void print_heap(){
-        cout<<"Printing min heap"<<endl;
+        cout<<"Printing max heap"<<endl;
         if(isEmpty()){
         cout<<"Empty heap"<<endl;
         }else{
