@@ -1,12 +1,12 @@
 # Basic :
 
-##### Database :
+### Database :
 
 Database is a **collection** of inter-related data which helps in efficient retrieval, insertion and deletion of **data** from database and **organizes** the data in the form of tables, views, schemas, reports etc.
 
 (Data : it's a collection of small unit of information like text,media etc.)
 
-##### Common Database Types :
+### Common Database Types :
 
 1. **Centralized DB** : It is the type of database that stores data at a centralized database system.'
 2. **Distributed DB** : Data is distributed among different database systems which are connected via communication links that help the end-users to access the data easily.
@@ -18,13 +18,13 @@ Database is a **collection** of inter-related data which helps in efficient retr
    3. **Graph Databases:** It is used for storing vast amounts of data in a graph-like structure. Most commonly, social networking websites use the graph database.
    4. **Wide-column stores:** It is similar to the data represented in relational databases. Here, data is stored in large columns together, instead of storing in rows.
 
-##### DBMS :
+### DBMS :
 
 It is a software for **storing** and **retrieving** users' data while considering appropriate security measures. It consists of a group of programs which manipulate the database. The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data. 
 
 DBMS allows users to create their own databases as per their requirement. It provides an interface between the data and the software application.
 
-##### Advantages of Using a DBMS / Need for DBMS :
+### Advantages of Using a DBMS / Need for DBMS :
 
 * DBMS offers a variety of techniques to store & retrieve data efficiently.
 * DBMS serves as an efficient handler to balance the needs of multiple applications using the same data.
@@ -34,12 +34,12 @@ DBMS allows users to create their own databases as per their requirement. It pro
 * The DBMS implies integrity constraints to get a high level of protection against prohibited access to data.
 * A DBMS schedules concurrent access to the data in such a manner that only one user can access the same data at a time
 
-##### Some Disadvantages of using DBMS :
+### Some Disadvantages of using DBMS :
 
 * Initial hardware and software costs.
 * Cost for training employees for the complex system.
 
-##### DBMS vs File System
+### DBMS vs File System
 
 | DBMS                                                                | File System                                                            |
 | ------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -51,7 +51,7 @@ DBMS allows users to create their own databases as per their requirement. It pro
 
 
 
-##### DBMS Architecture :
+### DBMS Architecture :
 
 | Two-Tier                                                                                                                                    | Three-Tier                                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ DBMS allows users to create their own databases as per their requirement. It pro
 | Example – Contact Management System created using MS-Access or Railway Reservation System, etc.                                            | Example – Designing registration form which contains text box, label, button or a large website on the Internet, etc.            |
 
 
-##### Database Language / SQL :
+### Database Language / SQL :
 
 **Structured Query Language(SQL)** is the database language which is used to perform certain operations on the existing database or to create a database.
 
