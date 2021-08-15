@@ -76,8 +76,19 @@ SQL commands are mainly categorized into five categories as:
 3. **DML – Data Manipulation Language** : Deals with the manipulation of data present in the database.Ex : INSERT,UPDATE,DELETE
 4. **DCL – Data Control Language** : Deals with the rights, permissions and other controls. EX : GRANT,REVOKE
 5. **TCL - Transaction Control Language** : Deal with the [transaction within the database](https://www.geeksforgeeks.org/sql-transactions/).
-
    * **COMMIT** – commits a Transaction.
    * [**ROLLBACK**](https://www.geeksforgeeks.org/sql-transactions/)– rollbacks a transaction in case of any error occurs.
    * **SAVEPOINT** –sets a savepoint within a transaction.
    * **SET TRANSACTION** –specify characteristics for the transaction.
+
+### Instance / DB State :
+
+It is the snapshot of the database taken at a particular moment. It can also be described as collection of the information stored in the database at that particular moment.
+
+### Schema :
+
+Overall description or the overall design of the database specified during the database design.Basically, it displays the record types(entity),names of data items(attribute) but not the relation among the files.Values in schema might change but not the structure of schema.
+
+### Sub-Schema :
+
+It can be defined as the subset or sub-level of schema that has the same properties as the schema.It provides the users a window through which the user can view only that part of database which is of matter of interest
