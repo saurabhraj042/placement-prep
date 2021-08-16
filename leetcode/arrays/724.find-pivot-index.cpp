@@ -58,4 +58,19 @@ public:
         
         return -1;
     }
+
+    /*
+        Let's say that for an index 'i' :
+            left sum = a
+            right sum = b
+            total sum = T
+
+            so => a + b + a[i] = T
+        and it is given that for 'i' to be pivot a==b should be valid
+        so let's assume that a==b for now
+
+        => 2*a + a[i] = T so if this cond is valid we have our ans
+
+        and here 'a' is nothing but prefix_sum till index 'i-1'
+    */
 };
