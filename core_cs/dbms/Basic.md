@@ -20,7 +20,7 @@ Database is a **collection** of inter-related data which helps in efficient retr
 
 ### DBMS :
 
-It is a software for **storing** and **retrieving** users' data while considering appropriate security measures. It consists of a group of programs which manipulate the database. The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data. 
+It is a software for **storing** and **retrieving** users' data while considering appropriate security measures. It consists of a group of programs which manipulate the database. The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data.
 
 DBMS allows users to create their own databases as per their requirement. It provides an interface between the data and the software application.
 
@@ -34,7 +34,7 @@ DBMS allows users to create their own databases as per their requirement. It pro
 * The DBMS implies integrity constraints to get a high level of protection against prohibited access to data.
 * A DBMS schedules concurrent access to the data in such a manner that only one user can access the same data at a time
 
-### Some Disadvantages of using DBMS :
+### Some Disadvantages of using DBMS  :
 
 * Initial hardware and software costs.
 * Cost for training employees for the complex system.
@@ -49,8 +49,6 @@ DBMS allows users to create their own databases as per their requirement. It pro
 | Provides a good protection mechanism.                               | It dosen't'                                                            |
 | Takes care of Concurrent access of data using some form of locking. | Concurrent access has many problems which leads to loss of<br />data.  |
 
-
-
 ### DBMS Architecture :
 
 | Two-Tier                                                                                                                                    | Three-Tier                                                                                                                        |
@@ -63,7 +61,6 @@ DBMS allows users to create their own databases as per their requirement. It pro
 | It is less secured as client can communicate with database directly.                                                                        | It is secured as client is not allowed to communicate with database directly.                                                     |
 | It results in performance loss whenever the users increase rapidly.                                                                         | It results in performance loss whenever the system is run on Internet but gives more performance than two-tier architecture.      |
 | Example – Contact Management System created using MS-Access or Railway Reservation System, etc.                                            | Example – Designing registration form which contains text box, label, button or a large website on the Internet, etc.            |
-
 
 ### Database Language / SQL :
 
@@ -92,3 +89,9 @@ Overall description or the overall design of the database specified during the d
 ### Sub-Schema :
 
 It can be defined as the subset or sub-level of schema that has the same properties as the schema.It provides the users a window through which the user can view only that part of database which is of matter of interest
+
+### 3 Level Data Abstraction :
+
+1. **View Level** : This level tells the application about how the data should be shown to the user. Example: If we have a login-id and password in a university system, then as a student, we can view our marks, attendance, fee structure, etc. But the faculty of the university will have a different view. He will have options like salary, edit marks of a student, enter attendance of the students, etc. So, both the student and the faculty have a different view.
+2. **Logical Level** : This level tells how the data is actually stored and structured. We have different data models by which we can store the data.Example : Let us take an example where we use the relational model for storing the data. We have to store the data of a student, the columns in the student table will be student_name, age, mail_id, roll_no etc.
+3. **Physical Level** : Physical level tells us that where the data is actually stored i.e. it tells the actual location of the data that is being stored by the user. The Database Administrators(DBA) decide that which data should be kept at which particular disk drive, how the data has to be fragmented, where it has to be stored etc.
