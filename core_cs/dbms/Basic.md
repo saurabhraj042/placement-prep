@@ -95,3 +95,193 @@ It can be defined as the subset or sub-level of schema that has the same propert
 1. **View Level** : This level tells the application about how the data should be shown to the user. Example: If we have a login-id and password in a university system, then as a student, we can view our marks, attendance, fee structure, etc. But the faculty of the university will have a different view. He will have options like salary, edit marks of a student, enter attendance of the students, etc. So, both the student and the faculty have a different view.
 2. **Logical Level** : This level tells how the data is actually stored and structured. We have different data models by which we can store the data.Example : Let us take an example where we use the relational model for storing the data. We have to store the data of a student, the columns in the student table will be student_name, age, mail_id, roll_no etc.
 3. **Physical Level** : Physical level tells us that where the data is actually stored i.e. it tells the actual location of the data that is being stored by the user. The Database Administrators(DBA) decide that which data should be kept at which particular disk drive, how the data has to be fragmented, where it has to be stored etc.
+
+
+# RDBMS :
+
+A relational database like SQL is a collection of data items organized in tables.
+
+### Degree of Relation :
+
+1. **one-to-one relationship** : In RDBMS, a one-to-one (1:1) relationship exists when zero or one instance of entity A can be associated with zero or one instance of entity B, and zero or one instance of entity B can be associated with zero or one instance of entity A. (abbreviated 1:1)
+2. **one-to-many relationship** : In RDBMS, a one-to-many (1:N) relationship exists when, for one instance of entity A, there exists zero, one, or many instances of entity B; but for one instance of entity B, there exists zero or one instance of entity A.
+3. **many-to-many relationship** : In RDBMS, a many-to-many (M:N) relationship exists when, for one instance of entity A, there exists zero, one, or many instances of entity B; and for one instance of entity B, there exists zero, one, or many instances of entity A. (abbreviated M:N)
+
+### Keys :
+
+**Candidate Key:** A candidate key is an attribute or set of an attribute which can uniquely identify a tuple. The value of the Candidate Key is unique and non-null for every tuple.
+
+* There can be more than one candidate key in a relation.
+* The candidate key can be simple (having only one attribute) or composite as well.
+* No of candidate keys in a Relation are **nC(floor(n/2))**,for example if a Relation have 5 attributes i.e. R(A,B,C,D,E) then total no of candidate keys are 5C(floor(5/2))=10.
+
+**Primary Key:** It is the first key which is used to identify one and only one instance of an entity uniquely.There can be more than one candidate key in relation out of which one can be chosen as the primary key.
+
+**Alternate Key**: The candidate key other than the primary key is called an alternate key. 
+
+**Foreign Key:** Foreign keys are the column of the table which is used to point to the primary key of another table.
+
+**Super Key :** Super key is a set of an attribute which can uniquely identify a tuple. Super key is a superset of a candidate key.
+
+### Schema Diagrams :
+
+#### 1 . ER Model : 
+
+ER Model is used to model the logical view of the system from data perspective which consists of these components: 
+
+* **Entitiy :** An entity may be any object, class, person or place. In the ER diagram, an entity can be represented as rectangles.An entity that depends on another entity called a **Weak Entity.**
+* **Attribute :** The attribute is used to describe the property of an entity.
+* **Relationship :** A relationship is used to describe the relation between entities. Diamond or rhombus is used to represent the relationship.
+
+Types of Attributes :
+
+1. **Key Attribute** : The key attribute is used to represent the main characteristics of an entity. It represents a primary key. The key attribute is represented by an ellipse with the text underlined.
+2. **Composite Attribute :** An attribute that composed of many other attributes is known as a composite attribute.
+3. **Multivalued Attribute** : An attribute can have more than one value. These attributes are known as a multivalued attribute. The double oval is used to represent multivalued attribute.
+4. **Derived Attribute :** An attribute that can be derived from other attribute is known as a derived attribute. It can be represented by a dashed ellipse.
+
+Types of Relation :
+
+1. One to One
+2. One to Many
+3. Many to Many
+
+#### 2. Relational Model :
+
+A relational database stores data in the form of relations (tables).
+
+Important terms for this model :
+
+* **Attribute:** Attributes are the properties that define a relation. e.g.;  **ROLL_NO** , **NAME**
+* **Relation Schema:** A relation schema represents name of the relation with its attributes. e.g.; STUDENT (ROLL_NO, NAME, ADDRESS, PHONE and AGE) is relation schema for STUDENT. If a schema has more than 1 relation, it is called Relational Schema.
+* **Tuple:** Each row in the relation is known as tuple.
+* **Relation Instance:** The set of tuples of a relation at a particular instance of time is called as relation instance.
+* **Degree:** The number of attributes in the relation is known as degree of the relation.
+* **Cardinality:** The number of tuples in a relation is known as cardinality.
+* **Column:** Column represents the set of values for a particular attribute.
+* **NULL Values:** The value which is not known or unavailable is called NULL value.
+
+
+### Relational Operations :
+
+#### **SELECT :**
+
+The SELECT operation is used for selecting a subset of the tuples according to a given selection condition. Sigma(σ)Symbol denotes it. It is used as an expression to choose tuples which meet the selection condition. Select operator selects tuples that satisfy a given predicate.
+
+`σ<sub>p</sub>(r)`
+
+`σ` is the predicate
+
+`r` stands for relation which is the name of the table
+
+`p` is prepositional logic
+
+**Example 1**
+
+```
+σ topic = "Database" (Tutorials)
+```
+
+**Output** - Selects tuples from Tutorials where topic = 'Database'.
+
+#### **PROJECTION :**
+
+The projection eliminates all attributes of the input relation but those mentioned in the projection list. The projection method defines a relation that contains a vertical subset of Relation.
+
+This helps to extract the values of specified attributes to eliminates duplicate values. (pi) symbol is used to choose attributes from a relation. This operator helps you to keep specific columns from a relation and discards the other columns.
+
+**Example of Projection:**
+
+Consider the following table
+
+| CustomerID | CustomerName | Status   |
+| ---------- | ------------ | -------- |
+| 1          | Google       | Active   |
+| 2          | Amazon       | Active   |
+| 3          | Apple        | Inactive |
+| 4          | Alibaba      | Active   |
+
+Here, the projection of CustomerName and status will give
+
+```
+Π CustomerName, Status (Customers)
+```
+
+| CustomerName | Status   |
+| ------------ | -------- |
+| Google       | Active   |
+| Amazon       | Active   |
+| Apple        | Inactive |
+| Alibaba      | Active   |
+
+
+#### **UNION :**
+
+UNION is symbolized by ∪ symbol. It includes all tuples that are in tables A or in B. It also eliminates duplicate tuples. So, set A UNION set B would be expressed as:
+
+The result <- A ∪ B
+
+For a union operation to be valid, the following conditions must hold -
+
+* R and S must be the same number of attributes.
+* Attribute domains need to be compatible.
+* Duplicate tuples should be automatically removed.
+
+Example
+
+Consider the following tables.
+
+| Table A  |          | **Table B** |
+| -------- | -------- | ----------------- |
+| column 1 | column 2 |                   |
+| 1        | 1        |                   |
+| 1        | 2        |                   |
+
+A ∪ B gives
+
+| Table A ∪ B |
+| ------------ |
+| column 1     |
+| 1            |
+| 1            |
+| 1            |
+
+#### **SET DIFFERENT :**
+
+Symbol denotes it. The result of A - B, is a relation which includes all tuples that are in A but not in B.
+
+* The attribute name of A has to match with the attribute name in B.
+* The two-operand relations A and B should be either compatible or Union compatible.
+* It should be defined relation consisting of the tuples that are in relation A, but not in B.
+
+**Example**
+
+```
+A-B
+```
+
+| Table A - B |
+| ----------- |
+| column 1    |
+| 1           |
+
+#### **CARTESIAN PRODUCT :**
+
+**Cartesian Product in DBMS** is an operation used to merge columns from two relations. Generally, a cartesian product is never a meaningful operation when it performs alone. However, it becomes meaningful when it is followed by other operations. It is also called Cross Product or Cross Join.
+
+σ  ~column 2 ~ =  ~'1' ~ (A X B)
+
+Output – The above example shows all rows from relation A and B whose column 2 has value 1
+
+| σ column 2 = '1' (A X B) |
+| ------------------------- |
+| column 1                  |
+| 1                         |
+| 1                         |
+
+#### 
+**RENAME :**
+
+Rename is a unary operation used for renaming attributes of a relation.
+
+ρ (a/b)R will rename the attribute 'b' of relation by 'a'.
