@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+// https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/discuss/1322101/C%2B%2BJavaPython-MaxHeap-MinHeap-Binary-Search-Picture-Explain-Clean-and-Concise
 class Solution {
 public:
     int kthSmallest(vector<vector<int>>& matrix, int k) {
