@@ -16,7 +16,9 @@ public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
         vector<vector<int>> ans;
         map<int,map<int,multiset<int>>> mp;
+        // mp[column][row] = set of elements inside Coloumn
         trav(root,0,0,mp);
+        
         for(auto x:mp){
             vector<int> col;
             for(auto y:x.second){
@@ -27,11 +29,11 @@ public:
         return ans;
     }
 
-    void trav(TreeNode* node,int x,int y,map<int,map<int,multiset<int>>> &mp){
+    void trav(TreeNode* node, int col, int row, map<int,map<int,multiset<int>>> &mp){
         if(node){
-            mp[x][y].insert(node->val);
-            trav(node->left,x-1,y+1,mp);
-            trav(node->right,x+1,y+1,mp);
+            mp[col][row].insert(node->val);
+            trav(node->left, col-1, row+1, mp);
+            trav(node->right, col+1, row+1, mp);
         }
     }
 };

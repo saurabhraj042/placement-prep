@@ -16,22 +16,22 @@ public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
         vector<vector<int>> ans;
         
-        // 2D mapping of the tree with x and y coordinates
+        // map[col][row] = set of nodes in the resp column
         map<int,map<int,multiset<int>>> mp;
         queue<pair<TreeNode*,pair<int,int>>> q;
         q.push({root,{0,0}});
         
         while(!q.empty()){
-            pair<TreeNode*,pair<int,int>> p = q.front();
+            auto p = q.front();
             q.pop();
             TreeNode* node = p.first;
-            int verLevel = p.second.second;
-            int horLevel = p.second.first;
+            int row = p.second.second;
+            int col = p.second.first;
             
-            mp[horLevel][verLevel].insert(node->val);
+            mp[col][row].insert(node->val);
             
-            if(node->left) q.push({node->left,{horLevel-1,verLevel+1}});
-            if(node->right) q.push({node->right,{horLevel+1,verLevel+1}});
+            if(node->left) q.push({node->left, {col-1, row+1}});
+            if(node->right) q.push({node->right, {col+1, row+1}});
         }
         
         for(auto x:mp){
