@@ -27,6 +27,7 @@ public:
         //Imp Observation that (size-1)th index is rep the level itself
         if(l == a.size()) a.push_back(n->val);
         
-        solve(a,n->right,l+1);solve(a,n->left,l+1);
+        solve(a,n->right,l+1);
+        solve(a,n->left,l+1);
     }
 };
