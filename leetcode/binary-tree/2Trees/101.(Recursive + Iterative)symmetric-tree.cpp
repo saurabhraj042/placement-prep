@@ -1,13 +1,10 @@
-/*
- * @lc app=leetcode id=101 lang=cpp
- *
- * [101] Symmetric Tree
- */
-
-// @lc code=start
 
 class Solution {
 public:
+/*
+    Think of the solution where you have to compare
+    two Binary Trees
+*/
     bool isSymmetric(TreeNode* root) {
         if(!root) return true;
         stack<TreeNode*> sl, sr;
@@ -33,6 +30,19 @@ public:
         }
         return true;
         
+    }
+
+    // Recursive approach
+    int isSymmetric(TreeNode* A) {
+        return !A || rec(A->left,A->right);
+    }
+
+    int rec(TreeNode* l, TreeNode* r){
+        if(!l || !r) return 0;
+
+        if(l->val != r->val) return 0;
+
+        reurn rec(l->left, r->right) && rec(l->right, r->left);
     }
 };
 
