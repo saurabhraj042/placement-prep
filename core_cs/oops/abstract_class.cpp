@@ -1,9 +1,9 @@
 /**
  *      # Abstract classes may or may not contain abstract methods
  * 
- *      # If a class has at least one abstract method, then the class is abstract.
+ *      # If a class has at least one pure virtual, then the class is abstract.
  * 
- *      # If a class is declared abstract, it cannot be instantiated.
+ *      # If a class is abstract, it cannot be instantiated.
  * 
  *      # To use an abstract class, you have to inherit it from another class, 
  *        provide implementations for the abstract methods in it.
