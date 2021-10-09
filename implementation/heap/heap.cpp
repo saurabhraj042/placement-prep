@@ -47,7 +47,7 @@ public:
     void print_heap(){
         cout<<"Printing max heap"<<endl;
         if(isEmpty()){
-        cout<<"Empty heap"<<endl;
+            cout<<"Empty heap"<<endl;
         }else{
             for(int i=0;i<arr.size();i++)
                 cout<<arr[i]<<" ";
@@ -62,9 +62,9 @@ public:
     }
 
     void heapify(int ind){
-        int parent_ind = (ind-1)/2;
-        if(parent_ind>=0 && arr[parent_ind]<arr[ind]){
-            swap(arr[parent_ind],arr[ind]);
+        int parent_ind = (ind - 1) / 2;
+        if(parent_ind >= 0 && arr[parent_ind] < arr[ind]){
+            swap(arr[parent_ind], arr[ind]);
             heapify(parent_ind);
         }
     }
