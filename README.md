@@ -14,6 +14,8 @@ It contains all the notes of cs fundamental subjects and I have followed Love Ba
 
 [Operating System](https://whimsical.com/operating-system-cheatsheet-by-love-babbar-S9tuWBCSQfzoBRF5EDNinQ)
 
+Linux OS
+
 [Object Oriented Programming](https://whimsical.com/object-oriented-programming-cheatsheet-by-love-babbar-YbSgLatbWQ4R5paV7EgqFw)
 
 [Computer Networks]()
