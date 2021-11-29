@@ -16,5 +16,22 @@ public:
         root->left = nullptr;
         rightSubtree = root;
     }
+
+     void fun(TreeNode* root){
+        if(!root) return;
+        
+        auto ls = root->left;
+        auto rs = root->right;
+        
+        root->left = nullptr;
+       
+        fun(ls);
+        
+        root->right = ls;
+        while(root->right) root = root->right;
+        root->right = rs;
+        
+        fun(rs);
+    }
 };
 

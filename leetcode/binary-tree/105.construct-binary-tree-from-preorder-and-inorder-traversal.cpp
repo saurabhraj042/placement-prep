@@ -2,25 +2,20 @@
 // https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 class Solution {
 public:
-    TreeNode* build(vector<int>& A, vector<int>& B,int preInd,int ioS,int ioE){
-        if(preInd>A.size()-1 || ioS>ioE) return NULL;
-        
-        TreeNode* root = new TreeNode(A[preInd]);
-        
-        int ind = -1;
-        for(int i=ioS;i<=ioE;i++){
-            if(B[i]==A[preInd]){
-                ind = i;
-                break;
-            }
-        }
-        
-        root->left = build(A,B,preInd+1,ioS,ind-1);
-        root->right = build(A,B,preInd+ind-ioS+1,ind+1,ioE);
-        
-        return root;
-    }
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-        return build(preorder,inorder,0,0,inorder.size()-1);
+        int rootIdx = 0;
+        return build(preorder, inorder, rootIdx, 0, inorder.size()-1);
+    }
+    
+    TreeNode* build(vector<int>& preorder, vector<int>& inorder, int& rootIdx, int left, int right) {
+        if (left > right) return NULL;
+        int pivot = left;  // find the root from inorder
+        while(inorder[pivot] != preorder[rootIdx]) pivot++;
+        
+        rootIdx++;
+        TreeNode* newNode = new TreeNode(inorder[pivot]);
+        newNode->left = build(preorder, inorder, rootIdx, left, pivot-1);
+        newNode->right = build(preorder, inorder, rootIdx, pivot+1, right);
+        return newNode;
     }
 };

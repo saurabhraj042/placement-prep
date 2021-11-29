@@ -24,7 +24,6 @@ public:
             while (j < n2 && version2[j] != '.')
             {
                 v2 = v2 * 10 + (version2[j] - '0');
-                ;
                 j++;
             }
 

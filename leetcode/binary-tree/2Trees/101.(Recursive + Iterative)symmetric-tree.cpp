@@ -42,7 +42,7 @@ public:
 
         if(l->val != r->val) return 0;
 
-        reurn rec(l->left, r->right) && rec(l->right, r->left);
+        return rec(l->left, r->right) && rec(l->right, r->left);
     }
 };
 
