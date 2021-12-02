@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/multiply-strings/
+// https://leetcode.com/problems/multiply-strings/discuss/1563536/C%2B%2B-Simple-Solution-w-Explanation-and-Images-or-School-%2B-Optimized-Multiplication
 class Solution {
 public:
     string multiply(string num1, string num2) {
